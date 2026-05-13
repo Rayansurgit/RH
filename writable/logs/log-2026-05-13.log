@@ -251,3 +251,107 @@ CRITICAL - 2026-05-13 08:55:36 --> ErrorException: Type of App\Models\EmployeeMo
 [Method: GET, Route: auth/login]
 in APPPATH/Models/EmployeeModel.php on line 7.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:02:02 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:02:12 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:16 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:18 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:18 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:18 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:18 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:19 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:19 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:19 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:19 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:20 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:20 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:20 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:21 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:21 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:22 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:22 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:22 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:23 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:08:27 --> ErrorException: Type of App\Models\EmployeeModel::$validationRules must not be defined (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 09:15:18 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\SoldeModel::getByEmployee
+[Method: GET, Route: employe/dashboard]
+in SYSTEMPATH/Model.php on line 761.
+ 1 APPPATH/Controllers/Employe.php(42): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Employe->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2026-05-13 09:21:30 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\SoldeModel::getByEmployee
+[Method: GET, Route: employe/dashboard]
+in SYSTEMPATH/Model.php on line 761.
+ 1 APPPATH/Controllers/Employe.php(42): CodeIgniter\Model->__call()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Employe->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
