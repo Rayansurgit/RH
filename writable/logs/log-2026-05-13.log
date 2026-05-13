@@ -234,3 +234,20 @@ CRITICAL - 2026-05-13 08:16:40 --> ErrorException: Type of App\Models\EmployeeMo
 [Method: GET, Route: auth/login]
 in APPPATH/Models/EmployeeModel.php on line 7.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+DEBUG - 2026-05-13 08:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-13 08:37:12 --> ErrorException: Type of App\Models\EmployeeModel::$table must not be defined (as in class CodeIgniter\Model)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 08:54:08 --> ErrorException: Type of App\Models\EmployeeModel::$table must not be defined (as in class CodeIgniter\Model)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 08:54:11 --> ErrorException: Type of App\Models\EmployeeModel::$table must not be defined (as in class CodeIgniter\Model)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-13 08:55:36 --> ErrorException: Type of App\Models\EmployeeModel::$table must not be defined (as in class CodeIgniter\Model)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
