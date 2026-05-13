@@ -14,12 +14,15 @@
 
         <div class="f-group" style="margin-bottom:1rem">
           <label class="f-label">Type de congé <span style="color:var(--danger)">*</span></label>
-          <select name="type_conge" class="f-select">
+          <select name="type_conge" class="f-select" required>
             <option value="">-- Choisir un type --</option>
-            <option value="annuel">Congé annuel (18 j restants)</option>
-            <option value="maladie">Congé maladie (8 j restants)</option>
-            <option value="special">Congé spécial (1 j restant)</option>
-            <option value="sans_solde">Sans solde</option>
+            <?php foreach ($types as $type): ?>
+            <option value="<?= $type['id'] ?>"><?= htmlspecialchars($type['libelle']) ?> 
+              <?php if (isset($soldes[$type['id']])): ?>
+                (<?= $soldes[$type['id']]['restant'] ?> j restants)
+              <?php endif; ?>
+            </option>
+            <?php endforeach; ?>
           </select>
           <?php if ($errors = session('errors')) { ?>
             <div class="f-error"><i class="bi bi-exclamation-circle"></i> <?= $errors['type_conge'] ?? '' ?></div>
@@ -67,27 +70,21 @@
     <div class="data-card" style="margin:0">
       <div class="data-card-head"><h3><i class="bi bi-piggy-bank" style="color:var(--forest);margin-right:5px"></i>Vos soldes actuels</h3></div>
       <div style="padding:.75rem 1.1rem;display:flex;flex-direction:column;gap:.75rem">
+        <?php foreach ($types as $type): ?>
+        <?php $balance = $soldes[$type['id']] ?? null; ?>
         <div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-            <span style="font-size:.8rem;color:var(--ink)">Congé annuel</span>
-            <span style="font-family:'DM Mono',monospace;font-size:.8rem;color:var(--forest);font-weight:500">18 j</span>
+            <span style="font-size:.8rem;color:var(--ink)"><?= htmlspecialchars($type['libelle']) ?></span>
+            <span style="font-family:'DM Mono',monospace;font-size:.8rem;color:var(--forest);font-weight:500">
+              <?= $balance ? $balance['restant'] : 0 ?> j
+            </span>
           </div>
-          <div class="solde-bar"><div class="solde-fill" style="width:60%"></div></div>
-        </div>
-        <div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-            <span style="font-size:.8rem;color:var(--ink)">Maladie</span>
-            <span style="font-family:'DM Mono',monospace;font-size:.8rem;color:var(--forest);font-weight:500">8 j</span>
+          <div class="solde-bar">
+            <div class="solde-fill <?= ($balance && $balance['restant'] <= 2) ? 'warn' : '' ?>" 
+                 style="width:<?= $balance ? (($balance['restant'] / $type['jours_annuels']) * 100) : 0 ?>%"></div>
           </div>
-          <div class="solde-bar"><div class="solde-fill" style="width:80%"></div></div>
         </div>
-        <div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-            <span style="font-size:.8rem;color:var(--ink)">Spécial</span>
-            <span style="font-family:'DM Mono',monospace;font-size:.8rem;color:var(--warn);font-weight:500">1 j</span>
-          </div>
-          <div class="solde-bar"><div class="solde-fill warn" style="width:20%"></div></div>
-        </div>
+        <?php endforeach; ?>
       </div>
     </div>
     <div class="flash flash-info" style="margin:0">

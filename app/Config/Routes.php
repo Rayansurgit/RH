@@ -22,7 +22,7 @@ $routes->get('/', static function() {
         if ($role === 'admin') {
             return redirect()->to(base_url('admin/dashboard'));
         } elseif ($role === 'rh') {
-            return redirect()->to(base_url('rh/conges'));
+            return redirect()->to(base_url('rh/dashboard'));
         } else {
             return redirect()->to(base_url('employe/dashboard'));
         }
@@ -36,6 +36,7 @@ $routes->group('employe', function($routes) {
     $routes->get('conges', 'Employe::conges');
     $routes->get('conges/create', 'Employe::createConge');
     $routes->post('conges/store', 'Employe::storeConge');
+    $routes->get('conges/cancel/(:num)', 'Employe::cancelConge/$1');
     $routes->get('profil', 'Employe::profil');
 });
 
@@ -43,7 +44,9 @@ $routes->group('employe', function($routes) {
 $routes->group('rh', function($routes) {
     $routes->get('dashboard', 'RH::dashboard');
     $routes->get('conges', 'RH::conges');
+    $routes->post('conges/approve/(:num)', 'RH::approve/$1');
     $routes->get('conges/approve/(:num)', 'RH::approve/$1');
+    $routes->post('conges/refuse/(:num)', 'RH::refuse/$1');
     $routes->get('conges/refuse/(:num)', 'RH::refuse/$1');
     $routes->get('historique', 'RH::historique');
     $routes->get('soldes', 'RH::soldes');
@@ -52,11 +55,22 @@ $routes->group('rh', function($routes) {
 // Espace Admin
 $routes->group('admin', function($routes) {
     $routes->get('dashboard', 'Admin::dashboard');
+    
+    // Employés
     $routes->get('employes', 'Admin::employes');
     $routes->post('employes/store', 'Admin::storeEmploye');
     $routes->get('employes/edit/(:num)', 'Admin::editEmploye/$1');
     $routes->post('employes/update/(:num)', 'Admin::updateEmploye/$1');
+    $routes->get('employes/delete/(:num)', 'Admin::deleteEmploye/$1');
+    
+    // Départements
     $routes->get('departements', 'Admin::departements');
+    $routes->post('departements/store', 'Admin::storeDepartement');
+    
+    // Types de congé
     $routes->get('types-conge', 'Admin::typeConge');
+    $routes->post('types-conge/store', 'Admin::storeTypeConge');
+    
+    // Soldes
     $routes->get('soldes', 'Admin::soldes');
 });

@@ -2,45 +2,56 @@
 
 namespace App\Controllers;
 
+use App\Models\EmployeeModel;
 use CodeIgniter\Controller;
 
 class Auth extends Controller
 {
     protected $helpers = ['form'];
+    protected $employeeModel;
+
+    public function __construct()
+    {
+        $this->employeeModel = new EmployeeModel();
+    }
 
     public function login()
     {
         // Si déjà connecté, rediriger
         if (session('logged_in')) {
-            return redirect()->to(base_url('dashboard'));
+            $role = session('user_role');
+            if ($role === 'admin') {
+                return redirect()->to(base_url('admin/dashboard'));
+            } elseif ($role === 'rh') {
+                return redirect()->to(base_url('rh/dashboard'));
+            } else {
+                return redirect()->to(base_url('employe/dashboard'));
+            }
         }
 
         if ($this->request->getMethod() === 'post') {
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
 
-            // Validation simple (à améliorer avec une vraie base de données)
-            $credentials = [
-                'admin@techmada.mg' => ['password' => 'admin123', 'name' => 'Administrateur', 'role' => 'admin'],
-                'rh@techmada.mg' => ['password' => 'rh123', 'name' => 'Marie Rabe', 'role' => 'rh'],
-                'employe@techmada.mg' => ['password' => 'emp123', 'name' => 'Soa Rakoto', 'role' => 'employe'],
-            ];
-
-            if (isset($credentials[$email]) && $credentials[$email]['password'] === $password) {
+            // Authentifier avec le modèle
+            $employee = $this->employeeModel->authenticate($email, $password);
+            
+            if ($employee) {
                 session()->set([
                     'logged_in' => true,
-                    'user_email' => $email,
-                    'user_name' => $credentials[$email]['name'],
-                    'user_role' => $credentials[$email]['role'],
-                    'user_id' => md5($email),
+                    'user_id' => $employee['id'],
+                    'user_email' => $employee['email'],
+                    'user_name' => $employee['prenom'] . ' ' . $employee['name'],
+                    'user_role' => $employee['role'],
+                    'user_department' => $employee['id_department'],
+                    'user_full' => $employee,
                 ]);
 
                 // Rediriger selon le rôle
-                $role = $credentials[$email]['role'];
-                if ($role === 'admin') {
+                if ($employee['role'] === 'admin') {
                     return redirect()->to(base_url('admin/dashboard'));
-                } elseif ($role === 'rh') {
-                    return redirect()->to(base_url('rh/conges'));
+                } elseif ($employee['role'] === 'rh') {
+                    return redirect()->to(base_url('rh/dashboard'));
                 } else {
                     return redirect()->to(base_url('employe/dashboard'));
                 }

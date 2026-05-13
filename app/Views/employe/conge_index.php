@@ -6,12 +6,12 @@
   <div class="data-card-head">
     <h3>Toutes mes demandes</h3>
     <div style="display:flex;gap:6px">
-      <select class="f-select" style="font-size:.8rem;padding:6px 10px;width:auto">
-        <option>Tous les statuts</option>
-        <option>En attente</option>
-        <option>Approuvée</option>
-        <option>Refusée</option>
-        <option>Annulée</option>
+      <select class="f-select" style="font-size:.8rem;padding:6px 10px;width:auto" onchange="filterByStatus(this.value)">
+        <option value="">Tous les statuts</option>
+        <option value="en_attente">En attente</option>
+        <option value="approuvee">Approuvée</option>
+        <option value="refusee">Refusée</option>
+        <option value="annulee">Annulée</option>
       </select>
     </div>
   </div>
@@ -20,44 +20,48 @@
       <tr><th>Type</th><th>Début</th><th>Fin</th><th>Durée</th><th>Statut</th><th>Commentaire RH</th><th>Action</th></tr>
     </thead>
     <tbody>
+      <?php if (empty($requests)): ?>
+      <tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--muted)">Aucune demande de congé.</td></tr>
+      <?php else: ?>
+        <?php foreach ($requests as $request): ?>
       <tr>
-        <td><span class="type-badge t-annuel">Annuel</span></td>
-        <td class="td-muted">23 juin 2025</td>
-        <td class="td-muted">27 juin 2025</td>
-        <td class="td-mono">5 j</td>
-        <td><span class="statut s-attente">en attente</span></td>
-        <td class="td-muted" style="font-size:.78rem">—</td>
-        <td><a href="#" class="btn-sm btn-cancel" onclick="return confirm('Annuler cette demande?')"><i class="bi bi-x"></i> Annuler</a></td>
+        <td><span class="type-badge<?= $request['type_name'] === 'Congé annuel' ? ' t-annuel' : ($request['type_name'] === 'Congé maladie' ? ' t-maladie' : ($request['type_name'] === 'Congé spécial' ? ' t-special' : '')) ?>"><?= htmlspecialchars($request['type_name']) ?></span></td>
+        <td class="td-muted"><?= date('d/m/Y', strtotime($request['date_debut'])) ?></td>
+        <td class="td-muted"><?= date('d/m/Y', strtotime($request['date_fin'])) ?></td>
+        <td class="td-mono"><?= $request['nb_jours'] ?> j</td>
+        <td><span class="statut s-<?= $request['status'] === 'en_attente' ? 'attente' : ($request['status'] === 'approuvee' ? 'approuvee' : ($request['status'] === 'refusee' ? 'refusee' : 'annulee')) ?>"><?= htmlspecialchars($request['status']) ?></span></td>
+        <td style="font-size:.78rem;<?= $request['status'] === 'approuvee' ? 'color:var(--success)' : ($request['status'] === 'refusee' ? 'color:var(--danger)' : 'color:var(--muted)') ?>">
+          <?php if ($request['status'] === 'approuvee'): ?>
+          <i class="bi bi-check-circle"></i> Validé
+          <?php elseif ($request['status'] === 'refusee'): ?>
+          <?= htmlspecialchars($request['commentaire'] ?? 'Refusée') ?>
+          <?php else: ?>
+          —
+          <?php endif; ?>
+        </td>
+        <td>
+          <?php if ($request['status'] === 'en_attente'): ?>
+          <a href="<?= base_url('employe/conges/cancel/' . $request['id']) ?>" class="btn-sm btn-cancel" onclick="return confirm('Annuler cette demande?')"><i class="bi bi-x"></i> Annuler</a>
+          <?php else: ?>
+          <span class="td-muted" style="font-size:.75rem">—</span>
+          <?php endif; ?>
+        </td>
       </tr>
-      <tr>
-        <td><span class="type-badge t-maladie">Maladie</span></td>
-        <td class="td-muted">2 juin 2025</td>
-        <td class="td-muted">3 juin 2025</td>
-        <td class="td-mono">2 j</td>
-        <td><span class="statut s-approuvee">approuvée</span></td>
-        <td style="font-size:.78rem;color:var(--success)"><i class="bi bi-check-circle"></i> Validé</td>
-        <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-      </tr>
-      <tr>
-        <td><span class="type-badge t-annuel">Annuel</span></td>
-        <td class="td-muted">12 mai 2025</td>
-        <td class="td-muted">16 mai 2025</td>
-        <td class="td-mono">5 j</td>
-        <td><span class="statut s-approuvee">approuvée</span></td>
-        <td style="font-size:.78rem;color:var(--success)"><i class="bi bi-check-circle"></i> OK</td>
-        <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-      </tr>
-      <tr>
-        <td><span class="type-badge t-special">Spécial</span></td>
-        <td class="td-muted">5 avr. 2025</td>
-        <td class="td-muted">5 avr. 2025</td>
-        <td class="td-mono">1 j</td>
-        <td><span class="statut s-refusee">refusée</span></td>
-        <td style="font-size:.78rem;color:var(--danger)">Chevauchement détecté</td>
-        <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-      </tr>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </tbody>
   </table>
 </div>
 
+<script>
+function filterByStatus(status) {
+  if (status) {
+    window.location.href = '<?= base_url('employe/conges') ?>?status=' + status;
+  } else {
+    window.location.href = '<?= base_url('employe/conges') ?>';
+  }
+}
+</script>
+
 <?= $this->endSection() ?>
+

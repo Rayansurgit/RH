@@ -75,3 +75,162 @@ in SYSTEMPATH/Database/BaseConnection.php on line 606.
  7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
  8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
  9 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-05-13 08:00:54 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/mirado/Bureau/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/mirado/Bureau/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-05-13 08:07:49 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/mirado/Bureau/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/mirado/Bureau/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-05-13 08:07:49 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/mirado/Bureau/RH/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/mirado/Bureau/RH/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge()
+#4 /home/mirado/Bureau/RH/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge()
+#5 /home/mirado/Bureau/RH/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct()
+#6 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#7 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#8 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#10 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/mirado/Bureau/RH/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/mirado/Bureau/RH/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/mirado/Bureau/RH/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge()
+#3 /home/mirado/Bureau/RH/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge()
+#4 /home/mirado/Bureau/RH/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct()
+#5 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#6 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#7 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#9 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#10 {main}
+CRITICAL - 2026-05-13 08:07:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:seed/InitialSeeder]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge()
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge()
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct()
+ 5 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+ 9 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+DEBUG - 2026-05-13 08:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-13 08:12:24 --> ErrorException: Type of App\Models\EmployeeModel::$casts must be array (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2026-05-13 08:13:51 --> Error connecting to the database: Error: Class "SQLite3" not found in /home/mirado/Bureau/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/mirado/Bureau/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/mirado/Bureau/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+ERROR - 2026-05-13 08:14:42 --> Error connecting to the database: Error: Class "SQLite3" not found in /home/mirado/Bureau/RH/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/mirado/Bureau/RH/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/mirado/Bureau/RH/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/mirado/Bureau/RH/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/mirado/Bureau/RH/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/mirado/Bureau/RH/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/mirado/Bureau/RH/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/mirado/Bureau/RH/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/mirado/Bureau/RH/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/mirado/Bureau/RH/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/mirado/Bureau/RH/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+DEBUG - 2026-05-13 08:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-13 08:16:40 --> ErrorException: Type of App\Models\EmployeeModel::$casts must be array (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: auth/login]
+in APPPATH/Models/EmployeeModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

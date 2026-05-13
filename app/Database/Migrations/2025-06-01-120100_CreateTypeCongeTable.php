@@ -10,9 +10,8 @@ class CreateTypeCongeTable extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'libelle' => [
@@ -20,13 +19,13 @@ class CreateTypeCongeTable extends Migration
                 'constraint' => 100,
             ],
             'jours_annuels' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
                 'default' => 0,
             ],
             'deductible' => [
-                'type' => 'BOOLEAN',
-                'default' => true,
+                'type' => 'INTEGER',
+                'default' => 1,
             ],
             'created_at' => [
                 'type' => 'DATETIME',

@@ -10,20 +10,17 @@ class CreateCongeTable extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'id_employee' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
             ],
             'id_type_conge' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
             ],
             'date_debut' => [
                 'type' => 'DATE',
@@ -32,7 +29,7 @@ class CreateCongeTable extends Migration
                 'type' => 'DATE',
             ],
             'nb_jours' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
             ],
             'motif' => [
@@ -40,8 +37,8 @@ class CreateCongeTable extends Migration
                 'null' => true,
             ],
             'status' => [
-                'type' => 'ENUM',
-                'constraint' => ['en_attente', 'approuvee', 'refusee', 'annulee'],
+                'type' => 'VARCHAR',
+                'constraint' => 20,
                 'default' => 'en_attente',
             ],
             'commentaire' => [

@@ -10,9 +10,8 @@ class CreateEmployeesTable extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'name' => [
@@ -29,21 +28,20 @@ class CreateEmployeesTable extends Migration
                 'unique' => true,
             ],
             'role' => [
-                'type' => 'ENUM',
-                'constraint' => ['admin', 'rh', 'employe'],
+                'type' => 'VARCHAR',
+                'constraint' => 20,
                 'default' => 'employe',
             ],
             'date_embauche' => [
                 'type' => 'DATE',
             ],
             'actif' => [
-                'type' => 'BOOLEAN',
-                'default' => true,
+                'type' => 'INTEGER',
+                'default' => 1,
             ],
             'id_department' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
             ],
             'mdp' => [
                 'type' => 'VARCHAR',

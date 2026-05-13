@@ -6,12 +6,12 @@ use CodeIgniter\Model;
 
 class EmployeeModel extends Model
 {
-    protected $table = 'employees';
-    protected $primaryKey = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType = 'array';
-    protected $useSoftDeletes = false;
-    protected $allowedFields = [
+    protected string $table = 'employees';
+    protected string $primaryKey = 'id';
+    protected bool $useAutoIncrement = true;
+    protected string $returnType = 'array';
+    protected bool $useSoftDeletes = false;
+    protected array $allowedFields = [
         'name',
         'prenom',
         'email',
@@ -23,11 +23,11 @@ class EmployeeModel extends Model
         'created_at',
         'updated_at'
     ];
-    protected $useTimestamps = true;
-    protected $dateFormat = 'datetime';
-    protected $createdField = 'created_at';
-    protected $updatedField = 'updated_at';
-    protected $validationRules = [
+    protected bool $useTimestamps = true;
+    protected string $dateFormat = 'datetime';
+    protected string $createdField = 'created_at';
+    protected string $updatedField = 'updated_at';
+    protected array $validationRules = [
         'name' => 'required|string|max_length[100]',
         'prenom' => 'required|string|max_length[100]',
         'email' => 'required|valid_email|is_unique[employees.email]',
@@ -36,14 +36,14 @@ class EmployeeModel extends Model
         'id_department' => 'required|integer',
         'mdp' => 'required|string|min_length[8]',
     ];
-    protected $validationMessages = [
+    protected array $validationMessages = [
         'email' => [
             'is_unique' => 'Cet email est déjà utilisé.'
         ]
     ];
-    protected $skipValidation = false;
-    protected $cleanValidationRules = true;
-    protected $casts = [
+    protected bool $skipValidation = false;
+    protected bool $cleanValidationRules = true;
+    protected array $casts = [
         'date_embauche' => 'date',
         'actif' => 'boolean',
         'id_department' => 'integer'

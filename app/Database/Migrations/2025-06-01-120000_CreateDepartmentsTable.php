@@ -10,9 +10,8 @@ class CreateDepartmentsTable extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'name' => [
@@ -43,3 +42,4 @@ class CreateDepartmentsTable extends Migration
         $this->forge->dropTable('departments');
     }
 }
+

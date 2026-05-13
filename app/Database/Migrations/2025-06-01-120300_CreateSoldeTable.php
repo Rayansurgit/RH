@@ -10,42 +10,39 @@ class CreateSoldeTable extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'id_employee' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
             ],
             'id_type_conge' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
-                'unsigned' => true,
             ],
             'annee' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 4,
             ],
             'jours_attribues' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
                 'default' => 0,
             ],
             'jours_pris' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
                 'default' => 0,
             ],
             'restant' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
                 'default' => 0,
             ],
             'pris' => [
-                'type' => 'INT',
+                'type' => 'INTEGER',
                 'constraint' => 11,
                 'default' => 0,
             ],

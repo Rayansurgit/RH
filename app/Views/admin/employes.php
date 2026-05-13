@@ -27,12 +27,11 @@
       </div>
       <div class="f-group">
         <label class="f-label">Département</label>
-        <select name="departement" class="f-select">
+        <select name="id_department" class="f-select" required>
           <option value="">-- Choisir --</option>
-          <option value="IT">IT</option>
-          <option value="Finance">Finance</option>
-          <option value="Marketing">Marketing</option>
-          <option value="RH">RH</option>
+          <?php foreach ($departments as $dept): ?>
+          <option value="<?= $dept['id'] ?>" <?= old('id_department') == $dept['id'] ? 'selected' : '' ?>><?= htmlspecialchars($dept['name']) ?></option>
+          <?php endforeach; ?>
         </select>
       </div>
       <div class="f-group">
@@ -78,62 +77,39 @@
       <tr><th>Employé</th><th>Département</th><th>Rôle</th><th>Embauche</th><th>Statut</th><th>Solde annuel</th><th>Actions</th></tr>
     </thead>
     <tbody>
-      <tr>
+      <?php if (empty($employees)): ?>
+      <tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--muted)">Aucun employé.</td></tr>
+      <?php else: ?>
+        <?php foreach ($employees as $emp): ?>
+      <tr <?= !$emp['actif'] ? 'style="opacity:.5"' : '' ?>>
         <td>
           <div class="profile-row">
-            <div class="avatar av-green" style="width:32px;height:32px;font-size:.68rem">SR</div>
-            <div class="profile-info"><div class="pname">Soa Rakoto</div><div class="pdept">soa@techmada.mg</div></div>
+            <div class="avatar av-green" style="width:32px;height:32px;font-size:.68rem"><?= strtoupper(substr($emp['prenom'], 0, 1) . substr($emp['name'], 0, 1)) ?></div>
+            <div class="profile-info">
+              <div class="pname"><?= htmlspecialchars($emp['prenom'] . ' ' . $emp['name']) ?></div>
+              <div class="pdept"><?= htmlspecialchars($emp['email']) ?></div>
+            </div>
           </div>
         </td>
-        <td class="td-muted">IT</td>
-        <td><span class="type-badge" style="background:#f1efe8;color:#444441">employe</span></td>
-        <td class="td-muted td-mono" style="font-size:.78rem">2022-03-01</td>
-        <td><span class="statut s-approuvee" style="font-size:.68rem">actif</span></td>
-        <td><span style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--forest)">18 / 30 j</span></td>
+        <td class="td-muted">
+          <?php 
+            $dept = array_filter($departments, fn($d) => $d['id'] == $emp['id_department']);
+            echo htmlspecialchars(reset($dept)['name'] ?? 'N/A');
+          ?>
+        </td>
+        <td><span class="type-badge"><?= htmlspecialchars($emp['role']) ?></span></td>
+        <td class="td-muted td-mono" style="font-size:.78rem"><?= $emp['date_embauche'] ?></td>
+        <td><span class="statut s-<?= $emp['actif'] ? 'approuvee' : 'annulee' ?>" style="font-size:.68rem"><?= $emp['actif'] ? 'actif' : 'inactif' ?></span></td>
+        <td><span style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--forest)">— / 30 j</span></td>
         <td>
           <div class="action-btns">
-            <a href="<?= base_url('admin/employes/edit/1') ?>" class="btn-sm btn-edit"><i class="bi bi-pencil"></i> Éditer</a>
-            <a href="#" class="btn-sm btn-del" onclick="return confirm('Supprimer?')"><i class="bi bi-slash-circle"></i></a>
+            <a href="<?= base_url('admin/employes/edit/' . $emp['id']) ?>" class="btn-sm btn-edit"><i class="bi bi-pencil"></i> Éditer</a>
+            <a href="<?= base_url('admin/employes/delete/' . $emp['id']) ?>" class="btn-sm btn-del" onclick="return confirm('Supprimer?')"><i class="bi bi-slash-circle"></i></a>
           </div>
         </td>
       </tr>
-      <tr>
-        <td>
-          <div class="profile-row">
-            <div class="avatar av-blue" style="width:32px;height:32px;font-size:.68rem">MR</div>
-            <div class="profile-info"><div class="pname">Marie Rabe</div><div class="pdept">rh@techmada.mg</div></div>
-          </div>
-        </td>
-        <td class="td-muted">RH</td>
-        <td><span class="type-badge t-maladie">rh</span></td>
-        <td class="td-muted td-mono" style="font-size:.78rem">2020-01-15</td>
-        <td><span class="statut s-approuvee" style="font-size:.68rem">actif</span></td>
-        <td><span style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--forest)">25 / 30 j</span></td>
-        <td>
-          <div class="action-btns">
-            <a href="<?= base_url('admin/employes/edit/2') ?>" class="btn-sm btn-edit"><i class="bi bi-pencil"></i> Éditer</a>
-            <a href="#" class="btn-sm btn-del" onclick="return confirm('Supprimer?')"><i class="bi bi-slash-circle"></i></a>
-          </div>
-        </td>
-      </tr>
-      <tr style="opacity:.5">
-        <td>
-          <div class="profile-row">
-            <div class="avatar av-amber" style="width:32px;height:32px;font-size:.68rem">TF</div>
-            <div class="profile-info"><div class="pname">Tsiry Fidy</div><div class="pdept">tsiry@techmada.mg</div></div>
-          </div>
-        </td>
-        <td class="td-muted">Finance</td>
-        <td><span class="type-badge" style="background:#f1efe8;color:#444441">employe</span></td>
-        <td class="td-muted td-mono" style="font-size:.78rem">2019-07-10</td>
-        <td><span class="statut s-annulee" style="font-size:.68rem">inactif</span></td>
-        <td><span style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--muted)">— / — j</span></td>
-        <td>
-          <div class="action-btns">
-            <a href="#" class="btn-sm btn-view"><i class="bi bi-arrow-counterclockwise"></i> Réactiver</a>
-          </div>
-        </td>
-      </tr>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </tbody>
   </table>
 </div>
